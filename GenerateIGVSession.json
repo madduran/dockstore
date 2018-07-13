@@ -1,6 +1,0 @@
-{
-  "GenerateIGVSession.reference": "hg19",
-  "GenerateIGVSession.input_files": ["gs://broad-dsde-methods/mduran/resources/A-B.30x.confident.truth.vcf.gz",
-  									 "gs://broad-dsde-methods/mduran/resources/28-70.confident.bed"],
-  "GenerateIGVSession.file_name": "test-igv-session"
-}
