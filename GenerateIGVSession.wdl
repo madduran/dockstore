@@ -1,7 +1,10 @@
 workflow GenerateIGVSession { 
 
+	# these should be gs:// paths to the files
 	Array[String] input_files 
+	# hg19 or hg38
 	String reference
+	# name of output xml
 	String file_name
 
 	call writeXMLfile {
