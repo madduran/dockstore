@@ -3,7 +3,7 @@ workflow GenerateIGVSession {
 	# these should be gs:// paths to the files
 	Array[String] input_files 
 	# hg19 or hg38
-	String reference
+	String reference_version
 	# name of output xml
 	String file_name
 
@@ -11,7 +11,7 @@ workflow GenerateIGVSession {
 		input: 
 			input_files = input_files,
 			file_name = file_name,
-			reference = reference
+			reference_version = reference_version
 	}
 	output { 
 		File igv_session = writeXMLfile.igv_session
@@ -22,11 +22,11 @@ workflow GenerateIGVSession {
 # given a list of IGV compatible file paths
 task writeXMLfile {
 	Array[String] input_files
-	String reference
+	String reference_version
 	String file_name
 
 	command {
-		bash /usr/writeIGV.sh ${reference} ${sep=" " input_files} > "${file_name}.xml"
+		bash /usr/writeIGV.sh ${reference_version} ${sep=" " input_files} > "${file_name}.xml"
 	}
 	runtime {
 		docker: "quay.io/mduran/generate-igv-session:latest"
