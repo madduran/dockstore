@@ -28,7 +28,7 @@ if [ -z "$names" ]; then
 	done    
 else
     for ((i=0;i<${#files[@]};++i)); do
-    	echo -e "\t\t<Resource path=\""${files[i]}"\" names=\""${names[i]}"\"/>" 
+    	echo -e "\t\t<Resource path=\""${files[i]}"\" name=\""${names[i]}"\"/>" 
 	done  
 fi
 
